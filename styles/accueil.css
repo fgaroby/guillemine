@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#main p
+{
+	text-align : justify;
+	color : #BBB;
+}
+
+#main p:first-letter, .lettrine
+{
+	font-size : 2em;
+	margin-left : 15px;
+	color : #CC0000;
+}

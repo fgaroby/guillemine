@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+#main {
+	height			: 700px;
+	line-height		: 700px;
+	text-align		: center; /* centrage horizontal */
+}
+
+#main fieldset {
+	width			: 650px;
+	margin			: auto;
+	border			: 1px dashed #5F5F5F;
+	vertical-align	: middle;
+	display			: inline-block;
+	line-height		: 1.2; /* on rétablit le line-height */
+	text-align		: left; /* centrage horizontal */
+}
+
+#main legend {
+	border-left		: 1px solid #CC0000;
+	border-right	: 1px solid #CC0000;
+	padding			: 2px 10px;
+}
+
+#main legend span
+{
+	font-size		: 2em;
+	color			: #CC0000;
+}
+
+#main fieldset li {
+	list-style-type	: none;
+}
+
+#main fieldset li:before {
+	content : "→ ";
+	color : #CC0000;
+}
+
+#main fieldset .texte {
+	color : #5F5F5F;
+}

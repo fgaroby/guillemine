@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+
+body {
+	margin : 0px;
+	padding : 0px;
+	background : url( ../images/fond.jpg ) no-repeat center fixed;
+	-webkit-background-size: cover; /* pour Chrome et Safari */
+	-moz-background-size: cover; /* pour Firefox */
+	-o-background-size: cover; /* pour Opera */
+	background-size: cover; /* version standardisée */
+}
+
+.clearer {
+	height : 0px;
+	clear : both;	
+}
+
+a:link, a:visited, img {
+	text-decoration: none;
+	border : none;
+}
+hr {
+	clear : both;
+	background-color : #AA0000;
+	height : 12px;
+	border : solid 3px #CC0000;
+	width : 100%;
+	margin : 0px;
+	padding : 0px;
+}
+
+#main {
+	width : 945px;
+	min-height : 650px;
+	margin : 40px auto;
+	color : white;
+	background-color : black;
+	padding : 15px;
+}
+
+.mainTitle {
+	margin-left : 30px;
+}
+
+.mainTitle, .mainTitle a {
+	font-size : 18px;
+	font-weight : normal;
+	color : red;
+	pading-bottom : 45px;
+}

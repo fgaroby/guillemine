@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+#menu
+{
+	width : 100%;
+	background-color: #1C1C1C;
+	margin: auto;
+}
+
+#menu ul
+{
+	width : 85%;
+	margin: auto;
+	list-style-type: none;
+	text-align: center;
+}
+
+#menu ul li
+{
+	display : inline;
+	height : 2.5em;
+	padding : 0.5em 0.5em; /* Pour espacer les boutons entre eux */
+	margin-left: 2px;
+	vertical-align: bottom;
+	font-size : 22px;
+	color: #5F5F5F;
+	float: left; /*pour IE*/
+}
+
+#menu ul li a
+{
+	color: #5F5F5F;
+	text-decoration: none;
+}
+
+#menu ul li a:hover, #menu .current
+{
+	color: #CC0000;
+}

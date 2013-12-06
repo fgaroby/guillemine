@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+#galeries {
+	margin: auto;
+	width: 95%;
+	padding: 0px;
+}
+
+.theme {
+	position: relative;
+}
+
+.theme img {
+	width: 200px;
+	margin: 35px 35px;
+	padding: 0px;
+}
+
+.theme .titre {
+	position: absolute;
+	bottom: 0px;
+	left: 35px;
+	-webkit-transition: opacity 400ms ease-out;
+	-moz-transition-property: all 2s ease-out;
+	-o-transition-property: opacity 400ms ease-out;
+	transition: opacity 400ms ease-out;
+	opacity: 0;
+	color: #CCC;
+}
+
+.theme:hover .titre {
+	opacity: 1;
+}
+
+#image_hover {
+	text-align: center;
+	display: none;
+	margin: auto;
+	max-width: 650px;
+}
+
+#image_hover span {
+	color: red;
+}
+
+#image_hover img {
+	max-width: 650px;
+	max-height : 450px;
+}
