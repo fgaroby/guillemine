@@ -23,27 +23,13 @@
 				$selectGaleries = "	SELECT	g.id AS id_galerie,
 											g.nom AS nom_galerie,
 											g.annee AS annee_galerie,
-											g.p_random AS random,
 											p.id AS id_peinture,
 											p.nom AS nom_peinture
-									FROM
-									(
-										SELECT	gal.id,
-												gal.nom,
-												gal.annee,
-												(
-													SELECT	pe.id
-													FROM	peintures pe
-													WHERE	pe.id_galerie = gal.id
-													AND		type = 1
-													ORDER BY RAND()
-													LIMIT 1
-												) AS p_random
-										FROM	galeries gal
-									) g
-									LEFT JOIN peintures p
-										ON p.id = g.p_random
-									ORDER BY nom_galerie DESC";
+									FROM	peintures p
+									LEFT JOIN galeries g
+										ON g.id = p.id_galerie
+									GROUP BY	g.id
+									ORDER by	RAND()";
 				$select = $cnx->query( $selectGaleries );
 				$select->setFetchMode(PDO::FETCH_OBJ);
 	
