@@ -29,7 +29,7 @@
 									LEFT JOIN galeries g
 										ON g.id = p.id_galerie
 									GROUP BY	g.id
-									ORDER by	RAND()";
+									ORDER by	annee_galerie DESC";
 				$select = $cnx->query( $selectGaleries );
 				$select->setFetchMode(PDO::FETCH_OBJ);
 	
