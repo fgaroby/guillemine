@@ -1,4 +1,7 @@
-<?php error_reporting( E_ALL ); ?>
+<?php
+error_reporting( E_ALL );
+require_once( dirname( __FILE__ ) . '/library/thumbs.inc.php' );
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
@@ -15,40 +18,34 @@
 	?>
 	<hr />
 	<div id="main">
-		<span class="mainTitle">Oeuvres</span> <br />
+		<span class="mainTitle">Œuvres</span> <br />
 		<div id="oeuvres">
 <?php
 			require_once( dirname(__FILE__ ) . '/conf/config.inc.php');
 			try
 			{
 				$selectOeuvres = "	SELECT	o.id AS id_oeuvre,
-								o.nom AS nom_oeuvre,
-								p.id AS id_peinture,
-								p.nom AS nom_peinture
-							FROM
-							(
-								SELECT	o.id,
-									o.nom,
-									(
-										SELECT	p.id
-										FROM	peintures p
-										WHERE	p.id_galerie = o.id
-										ORDER BY RAND()
-										LIMIT 1
-									) AS p_random
-								FROM	oeuvres o
-							) o
-							LEFT JOIN peintures p
-								ON	p.id = o.p_random
-								AND	p.type = 2";
+											o.nom AS nom_oeuvre,
+											o.largeur,
+											o.longueur,
+											p.id AS id_peinture
+									FROM	peintures p
+									LEFT JOIN oeuvres o
+										ON	o.id = p.id_galerie
+										AND	type = 2
+									GROUP BY	o.id
+									ORDER by	nom_oeuvre ASC";
 				$select = $cnx->query( $selectOeuvres );
 				$select->setFetchMode( PDO::FETCH_OBJ );
 	
 				$i = 0;
 				while ($oeuvre = $select->fetch() )
 				{
+					if( !isThumbExists( $oeuvre->id_peinture, 'peintures' ) )
+						createThumb( $oeuvre->id_peinture, 'peintures' );
+					
 					echo '<span class="theme">
-							<a href="oeuvre.php?id_oeuvre=' . $oeuvre->id_oeuvre . '"><img src="./photos/vignettes/' . $oeuvre->id_peinture . '.jpg" /></a>
+							<a href="oeuvre.php?id_oeuvre=' . $oeuvre->id_oeuvre . '"><img src="./peintures/vignettes/' . $oeuvre->id_peinture . '.jpg" /></a>
 							<span class="titre">' . $oeuvre->nom_oeuvre . '</span>
 						</span>';
 					if( ++$i % 3 == 0 )

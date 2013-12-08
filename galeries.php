@@ -27,7 +27,8 @@
 											p.nom AS nom_peinture
 									FROM	peintures p
 									LEFT JOIN galeries g
-										ON g.id = p.id_galerie
+										ON	g.id = p.id_galerie
+										AND	type = 1
 									GROUP BY	g.id
 									ORDER by	annee_galerie DESC";
 				$select = $cnx->query( $selectGaleries );
