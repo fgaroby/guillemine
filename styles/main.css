@@ -49,3 +49,7 @@ hr {
 	color : red;
 	pading-bottom : 45px;
 }
+
+.imgRemove {
+	display : none;
+}

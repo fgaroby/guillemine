@@ -1,5 +1,5 @@
 <?php
-if( !isset( $_GET['id_galerie'] ) )
+if( !isset( $_GET['id_galerie'] ) || empty( $_GET['id_galerie'] ) )
 	header('Location: galeries.php');
 
 require_once( dirname(__FILE__ ) . '/conf/config.inc.php');
@@ -62,7 +62,10 @@ require_once( dirname(__FILE__ ) . '/conf/config.inc.php');
 
 			while ($peinture = $select->fetch() )
 			{
-				echo '<img src="./peintures/vignettes/' . $peinture->id . '.jpg" alt="' . $peinture->nom . '" height="140" />';
+				echo '<img	src="./peintures/vignettes/' . $peinture->id . '.jpg"
+							alt="' . $peinture->nom . '"
+							height="140"
+							title="' . $peinture->nom . '" />';
 			}
 ?>
 		</div>

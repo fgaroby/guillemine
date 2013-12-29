@@ -1,0 +1,9 @@
+label {
+	display : inline-block;
+	width : 75px;
+	text-align : right;
+}
+
+.OKButton:after {
+	content : url ('../images/ok.png' );
+}

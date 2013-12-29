@@ -16,6 +16,12 @@
 	padding: 0px;
 }
 
+.theme img.imgAdd {
+	width : auto;
+	margin : 103px 103px;
+	padding : 0px;
+}
+
 .theme .titre {
 	position: absolute;
 	bottom: 0px;
@@ -26,6 +32,11 @@
 	transition: opacity 400ms ease-out;
 	opacity: 0;
 	color: #CCC;
+	font-style : italic;
+}
+
+.theme .titre .annee {
+	font-style : normal;
 }
 
 .theme:hover .titre {
@@ -46,4 +57,13 @@
 #image_hover img {
 	max-width: 650px;
 	max-height : 450px;
+}
+
+
+#ajoutGalerie {
+	display : none;
+	position : absolute;
+	left : 30%;
+	background-color : lightgrey;
+	padding : 3px;
 }

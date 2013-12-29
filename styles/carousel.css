@@ -12,11 +12,11 @@
 	margin: 7px;
 	display: block;
 	float: left;
+	cursor : pointer;
 }
 
 a.prev,a.next {
-	background: url(../images/miscellaneous_sprite.png) no-repeat
-		transparent;
+	background: url(../images/miscellaneous_sprite.png) no-repeat transparent;
 	width: 45px;
 	height: 50px;
 	display: block;
@@ -63,8 +63,7 @@ a.prev span,a.next span {
 }
 
 .pagination a {
-	background: url(../images/miscellaneous_sprite.png) 0 -300px no-repeat
-		transparent;
+	background: url(../images/miscellaneous_sprite.png) 0 -300px no-repeat transparent;
 	width: 15px;
 	height: 15px;
 	margin: 0 5px 0 0;
